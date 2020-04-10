@@ -1,0 +1,57 @@
+.heading{
+    font-family: 'Oxanium';
+    text-align: center;
+    color: #009900;
+
+}
+.buttonstyles{
+    font-family: 'Oxanium';
+    text-align: center;
+    text-transform: uppercase;
+
+}
+.inputstyle{
+    font-family: 'Oxanium';
+    text-align: center;
+    text-transform: uppercase;
+}
+.centerbox{
+    text-align: center;
+    text-transform: uppercase;
+    color: whitesmoke;
+
+}
+body{
+    background-color: black;
+}
+.records{
+    color:#009900 ;
+}
+.table{
+    color:#009900 ;
+}
+table {
+    font-family: 'krub';
+    border-collapse: collapse;
+    width: 100%;
+    /* text-align: center; */
+
+  }
+  
+  td, th {
+    border: 1px solid #009900;
+    text-align: left;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* tr:nth-child(even) {
+    background-color: black;
+  } */
+  .schedulelink{
+        text-align: center;
+        font-family: 'Oxanium';
+        text-align: center;
+        color: #009900;
+        display:block;
+  }
