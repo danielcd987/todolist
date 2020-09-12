@@ -52,6 +52,7 @@ $sql = "SELECT * FROM tasks;"; //gets results from database
                         "<div class = 'table'>
                         <table>
                             <tr>
+                                <th>ID:</th>
                                 <th>Task:</th>
                                 <th>Class:</th>
                                 <th>Due Date:</th>
@@ -59,10 +60,15 @@ $sql = "SELECT * FROM tasks;"; //gets results from database
                                 <th>DELETE</th>
                             </tr>
                             <tr>
+                                <td><h3 class = 'records'>".$row['id']."</h3></td>
                                 <td><h3 class = 'records'>".$row['task']."</h3></td>
                                 <td><h3 class = 'records'>".$row['class']."</h3></td>
                                 <td><h3 class = 'records'>".$row['due_date']."</h5></td>
                                 <td><h3 class = 'records'>".$row['descrip']."</h5></td>
+
+                                <form method = 'POST' action = 'includes/delete.php'>
+                                <td><input type = 'submit' value = ".$row['id']." name = 'delete'></td>
+                                </form>
                             </tr>
                         </table>
                         </div>";
