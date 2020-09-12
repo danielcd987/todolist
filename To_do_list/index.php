@@ -67,7 +67,7 @@ $sql = "SELECT * FROM tasks;"; //gets results from database
                                 <td><h3 class = 'records'>".$row['descrip']."</h5></td>
 
                                 <form method = 'POST' action = 'includes/delete.php'>
-                                <td><input type = 'submit' value = ".$row['id']." name = 'delete'></td>
+                                <td>Delete Activity: <input type = 'submit' value = ".$row['id']." name = 'delete'></td>
                                 </form>
                             </tr>
                         </table>
