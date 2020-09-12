@@ -56,6 +56,7 @@ $sql = "SELECT * FROM tasks;"; //gets results from database
                                 <th>Class:</th>
                                 <th>Due Date:</th>
                                 <th>Description:</th>
+                                <th>DELETE</th>
                             </tr>
                             <tr>
                                 <td><h3 class = 'records'>".$row['task']."</h3></td>
