@@ -1,7 +1,8 @@
 <?php
+    include "header.php";
     include "includes/tdDbc.php";
 ?>
-<!DOCTYPE HTML>
+<!-- <!DOCTYPE HTML>
 <HTML>
 <HEAD>
 <TITLE>TO DO LIST</TITLE>
@@ -10,10 +11,10 @@
 <link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="liststyle.css">
 </HEAD>
-<BODY>
+<BODY> -->
 <form name = "tasklist" action = "includes/index.inc.php" method = "POST">
     
-        <h1 class = "heading">TO DO LIST:</h1>
+        <!-- <h1 class = "heading">TO DO LIST:</h1> -->
      <a href = "schedule.php" class = "schedulelink" >Class Schedule</a>
 
     <br>
@@ -76,6 +77,6 @@ $sql = "SELECT * FROM tasks;"; //gets results from database
             }
 ?>
 <br>
-
-</BODY>
-</HTML>
+<?php
+    include "footer.php";
+?>
