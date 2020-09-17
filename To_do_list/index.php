@@ -15,7 +15,7 @@
 <form name = "tasklist" action = "includes/index.inc.php" method = "POST">
     
         <!-- <h1 class = "heading">TO DO LIST:</h1> -->
-     <a href = "schedule.php" class = "schedulelink" >Class Schedule</a>
+     <!-- <a href = "schedule.php" class = "schedulelink" >Class Schedule</a> -->
 
     <br>
     <h3 class = "heading">Enter Task:</h3> 
