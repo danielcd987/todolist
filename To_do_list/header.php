@@ -11,5 +11,10 @@
 <link rel="stylesheet" type="text/css" href="liststyle.css">
 </HEAD>
 <BODY>
-    
-<h1 class = "heading">TO DO LIST:</h1>
+
+<h1 class = "heading"><a href = "index.php">TO DO LIST:</a></h1>
+
+<!-- <ul>
+    <li><a href = "sign-up.php">Sign up</a></li>
+    <li><a href = "login.php">Login</a></li>
+</ul> -->

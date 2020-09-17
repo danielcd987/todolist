@@ -4,6 +4,30 @@
     color: #009900;
 
 }
+.heading-box{
+    font-family: 'Oxanium';
+    text-align: center;
+    color: #009900;
+    border-style: solid;
+    border-color: #009900;
+    border-width: 1px;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+  }
+a{
+    font-family: 'Oxanium';
+    color: #009900;
+}
+a:hover{
+    color:white;
+}
 .buttonstyles{
     font-family: 'Oxanium';
     text-align: center;

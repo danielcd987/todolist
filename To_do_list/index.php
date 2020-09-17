@@ -2,22 +2,12 @@
     include "header.php";
     include "includes/tdDbc.php";
 ?>
-<!-- <!DOCTYPE HTML>
-<HTML>
-<HEAD>
-<TITLE>TO DO LIST</TITLE>
-<meta charset="UTF-8" />
-<META name="author" description="Dan DeCarlo"/>
-<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="liststyle.css">
-</HEAD>
-<BODY> -->
+
 <form name = "tasklist" action = "includes/index.inc.php" method = "POST">
     
         <!-- <h1 class = "heading">TO DO LIST:</h1> -->
      <!-- <a href = "schedule.php" class = "schedulelink" >Class Schedule</a> -->
 
-    <br>
     <h3 class = "heading">Enter Task:</h3> 
     
     <div class = "centerbox"> 
@@ -30,9 +20,10 @@
     <h3 class = "heading">Enter Due Date:</h3>
     <div class = "centerbox">
         <input type = "date" name = "duedate">
-    </div>                      
+    </div>     
+
+     <h3 class = "heading">Description:</h3>                 
      <div class = "centerbox">
-         <h3 class = "heading">Description:</h3>
          <input type = "textarea" size = "30" placeholder = "DESCRIPTION" class = "inputstyle" name = "descript">
     </div>
     <br>
