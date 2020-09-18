@@ -3,30 +3,29 @@
     include "includes/tdDbc.php";
 ?>
 
+
 <form name = "tasklist" action = "includes/index.inc.php" method = "POST">
-    
-        <!-- <h1 class = "heading">TO DO LIST:</h1> -->
-     <!-- <a href = "schedule.php" class = "schedulelink" >Class Schedule</a> -->
 
     <h3 class = "heading">Enter Task:</h3> 
-    
     <div class = "centerbox"> 
         <input class = "inputstyle" placeholder = "Task" name = "task" type = "text" > 
-    </div>
+    </div><br>
+
     <h3 class = "heading">Class:</h3>
     <div class = "centerbox"> 
         <input class = "inputstyle" placeholder = "Class" name = "class" type = "text"> 
-    </div>
+    </div><br>
+
     <h3 class = "heading">Enter Due Date:</h3>
     <div class = "centerbox">
         <input type = "date" name = "duedate">
-    </div>     
+    </div><br>     
 
      <h3 class = "heading">Description:</h3>                 
      <div class = "centerbox">
          <input type = "textarea" size = "30" placeholder = "DESCRIPTION" class = "inputstyle" name = "descript">
-    </div>
-    <br>
+    </div><br>
+
     <div class = "centerbox">
         <button class = "buttonstyles" type = "submit" name = "submittasks">SUBMIT</button>
      </div>

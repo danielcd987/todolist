@@ -2,7 +2,15 @@
     font-family: 'Oxanium';
     text-align: center;
     color: #009900;
-
+}
+.plain-letter{
+    font-family: 'Oxanium';
+    color: #009900;
+}
+.display-r{
+    font-family: 'Oxanium';
+    color: #009900;
+    text-align: right;
 }
 .heading-box{
     font-family: 'Oxanium';
@@ -19,7 +27,7 @@ ul {
     padding: 0;
   }
   li {
-    display: inline;
+    display: inline-block;
   }
 a{
     font-family: 'Oxanium';

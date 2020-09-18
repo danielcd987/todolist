@@ -13,8 +13,6 @@ else{
     header("Location: ../index.php?data=deleted");
 }
 
-
-
 }
 //got the delete section based off the youtube tutorial from https://www.youtube.com/watch?v=08fYqZqtaeU
 ?>
