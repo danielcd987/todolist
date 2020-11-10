@@ -49,6 +49,10 @@ a:hover{
     text-align: center;
     text-transform: uppercase;
 }
+.password_input{
+    font-family: 'Oxanium';
+    text-align: center;
+}
 .centerbox{
     text-align: center;
     text-transform: uppercase;

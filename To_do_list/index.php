@@ -1,9 +1,9 @@
 <?php
-    include "header.php";
+    include "./includes/header.php";
     include "includes/tdDbc.php";
 ?>
 
-
+<a href = "login.php">login page</a>
 <form name = "tasklist" action = "includes/index.inc.php" method = "POST">
 
     <h3 class = "heading">Enter Task:</h3> 
@@ -68,5 +68,5 @@ $sql = "SELECT * FROM tasks;"; //gets results from database
 ?>
 <br>
 <?php
-    include "footer.php";
+    include "./includes/footer.php";
 ?>
