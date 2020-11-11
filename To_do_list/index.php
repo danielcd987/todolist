@@ -4,6 +4,8 @@
 ?>
 
 <a href = "login.php">login page</a>
+<a href = "sign-up.php">signup page</a>
+
 <form name = "tasklist" action = "includes/index.inc.php" method = "POST">
 
     <h3 class = "heading">Enter Task:</h3> 

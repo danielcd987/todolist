@@ -1,7 +1,9 @@
 <?php
-    include "header.php";
-    include "includes/tdDbc.php";
+    include "./includes/header.php";
+    include "./includes/tdDbc.php";
 ?>
+
+<a href = "login.php">Login page</a>
 
 <br><h2 class = "heading">Sign Up:</h2>
 
@@ -29,3 +31,6 @@
     <button class = "buttonstyles" type = "submit" name = "signup">Sign Up</button>
  </div>
 </form>
+<?php
+    include "./includes/footer.php";
+?>
