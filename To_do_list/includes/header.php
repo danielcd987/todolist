@@ -12,4 +12,4 @@
 </HEAD>
 <BODY>
 
-<h1 class = "heading"><a href = "index.php">TO DO LIST:</a></h1>
+<h1 class = "heading">TO DO LIST:</h1>
