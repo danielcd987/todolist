@@ -35,7 +35,7 @@
 
 <br>
 <?php
-
+//shows the tasks in a table below the form
 $sql = "SELECT * FROM tasks;"; //gets results from database
         $results = mysqli_query($conn, $sql); //connects and displays 
         $queryresults = mysqli_num_rows($results); //checks rows and results
