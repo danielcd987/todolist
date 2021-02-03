@@ -1,5 +1,5 @@
 <?php
-header("Location: ../index.php?task=submitted");
+header("Location: ../tasks_list.php?task=submitted");
 $sqls = "SELECT * FROM tasks;"; //choses all data
 $results = mysqli_query($conn, $sqls); //connection to db and the query that runs
 

@@ -11,4 +11,4 @@
     $sql = "INSERT INTO `tasks`(`task`, `class`, `due_date`, `descrip`) VALUES ('$task','$class','$date','$descrip')";
     mysqli_multi_query($conn, $sql);
 
-    header("Location: ../index.php?task=submitted");
+    header("Location: ../tasks_list.php?task=submitted");
