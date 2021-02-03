@@ -1,4 +1,5 @@
 <?php
+//submits the tasks into the task DB
     include 'tdDbc.php';
 
 
