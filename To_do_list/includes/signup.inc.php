@@ -5,7 +5,7 @@ if(isset($_POST['signup'])){
     $password = $_POST['password'];
     $pwd2 = $_POST['password_match'];
 
-
+    echo($username. " ". $password. " ". $pwd2);
 }
 
 
