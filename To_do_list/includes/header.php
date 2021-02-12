@@ -13,3 +13,11 @@
 <BODY>
 
 <h1 class = "heading">TO DO LIST:</h1>
+
+<nav>
+    <ul>
+        <li><a href = "index.php">Login</a></li>
+        <li><a href = "sign-up.php">Sign Up</a></li>
+    </ul>
+</nav>
+ 

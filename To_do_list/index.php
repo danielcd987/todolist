@@ -17,7 +17,7 @@ include "./includes/header.php";
     <div class = "centerbox">
         <button class = "buttonstyles" type = "submit" name = "login">LOGIN</button>
     </div>
-</form>
+</form><br>
 
 <?php
 include "./includes/footer.php";
