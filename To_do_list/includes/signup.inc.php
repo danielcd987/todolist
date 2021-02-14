@@ -10,33 +10,68 @@ if(isset($_POST['signup'])){ //if the button from sign-up is clicked
     $pwd2 = $_POST['password_match'];
 
 
-    include "tdDbc.php"; //gets the database connection file
-    require_once "funct.inc.php";
+    require "tdDbc.php"; //gets the database connection file
+    // require_once "funct.inc.php";
 
-    if(emptyInputSignup($firstname,$lastname,$username,$email,$password,$pwd2) !== false){
+    if(empty($firstname) || empty($lastname) || empty($username) || empty($email) || empty($password) || empty($pwd2)){
         header("Location: ../sign-up.php?signup=fail_emptyfields");
         exit();
     }
-    if(invalidUserName($username) !== false){
+    else if(preg_match('/\s/',$username)){
         header("Location: ../sign-up.php?signup=fail_username");
         exit();
     }
-    if(invalidEmail($email) !== false){
+    else if(!filter_var($email,FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/",$username)){
+        header("Location: ../sign-up.php?signup=fail_email.pwd.uname");
+        exit();
+    }
+    else if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
         header("Location: ../sign-up.php?signup=fail_email");
         exit();
     }
-    if(invalidPassword($password,$pwd2) !== false){
-        header("Location: ../sign-up.php?signup=fail_password_nonmatch");
+    else if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){ //looks through username for symbols 
+        header("Location: ../signup.php?error=invaliduserid&email=".$username);
         exit();
     }
-    if(takenUsername($conn,$username) !== false){
-        header("Location: ../sign-up.php?signup=fail_usernameTaken");
+    else if($password !== $pwd2){
+        header("Location: ../sign-up.php?password_nomatch");
         exit();
     }
-    
-    createNewUser($conn, $firstname, $lastname, $username, $email, $password)
-
-    // echo($username. " ". $password. " ". $pwd2);
+    else{
+        $sql = "SELECT user_names FROM users WHERE user_names = ?";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt,$sql)){
+            header("Location: ../sign-up.php?sqlerror");
+            exit();
+        }
+        else{
+            mysqli_stmt_bind_param($stmt, "s",$username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_store_result($stmt);
+            $resultCheck = mysqli_stmt_num_rows($stmt);
+                if($resultCheck > 0){
+                    header("Location: ../sign-up.php?username_taken");
+                    exit();
+                }
+                else{
+                    $sql = "INSERT INTO users (first_name , last_name, user_names, email, pwd) VALUES (?,?,?,?,?)";
+                    $stmt = mysqli_stmt_init($conn);
+                    if(!mysqli_stmt_prepare($stmt,$sql)){
+                        header("Location: ../sign-up.php?sqlerrors");
+                        exit();
+                    }
+                    else{
+                        $hash = password_hash($password, PASSWORD_DEFAULT);
+                        mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $username, $email, $hash);
+                        mysqli_stmt_execute($stmt);
+                        header("Location: ../sign-up.php?signup_success");
+                        exit();
+                    }
+                }
+        }
+    } 
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
 }
 
 else{
