@@ -47,7 +47,7 @@ a:hover{
 .inputstyle{
     font-family: 'Oxanium';
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 .password_input{
     font-family: 'Oxanium';
@@ -93,3 +93,12 @@ table {
         color: #009900;
         display:block;
   }
+p{
+    font-family: 'Oxanium';
+    color: #009900;
+}
+.error{
+    font-family: 'Oxanium';
+    text-align: center;
+    color: #FFFFFF;
+}
