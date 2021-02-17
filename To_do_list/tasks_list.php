@@ -2,8 +2,15 @@
     include "./includes/header.php";
     include "includes/tdDbc.php";
 ?>
+<?php
+    if(isset($_SESSION['user_names'])){
+        echo ('<p>You are logged in.</p>');
+    }
+    else{
+        echo ('<p>You are logged out</p>');
+    }
 
-<a href = "sign-up.php">signup page</a>
+?>
 
 <form name = "tasklist" action = "includes/tasks_list.inc.php" method = "POST">
 
