@@ -21,22 +21,21 @@ if(isset($_POST['login'])){
             mysqli_stmt_bind_param($stmt, "ss", $username,$username);
             mysqli_stmt_execute($stmt);
 
-            $result = mysqli_stmt_get_result($stmt);
-            
-            if($rows = mysqli_fetch_assoc($result)){
-                $checkpassword = password_verify($password, $rows["pwd"]);
-                if($checkpassword == false){
+            $results = mysqli_stmt_get_result($stmt);
+            if($row = mysqli_fetch_assoc($results)){
+                $checkpassword = password_verify($password, $row["pwd"]);
+                if($checkpassword === false){
                     header("Location: ../index.php?error=incorrectpassword");
                     exit();
                 }
-                else if($checkpassword == true){
+                else if($checkpassword === true){
                     session_start();
-                    $_SESSION['id'] = $row['id']; 
-                    $_SESSION['user_name'] = $row['user_name']; 
+                    $_SESSION['id'] = $row['id'];  
                     $_SESSION['first_name'] = $row['first_name']; 
                     $_SESSION['last_name'] = $row['last_name'];
+                    $_SESSION['user_name'] = $row['user_names'];
                     $_SESSION['email'] = $row['email']; 
-                   header("Location: ../tasks_list.php?login=success");
+                   header("Location: ../tasks_list.php?error=noerrors");
                    exit();  
 
                 }
