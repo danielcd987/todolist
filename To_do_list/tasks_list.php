@@ -1,6 +1,6 @@
 <?php
     include "./includes/header.php";
-    include "includes/tdDbc.php";
+    include "./includes/tdDbc.php";
 ?>
 <?php
     if(isset($_SESSION['user_names'])){

@@ -1,5 +1,5 @@
 <?php
-    include "includes/tdDbc.php";
+    // include "includes/tdDbc.php";
     session_start();
 
 ?>

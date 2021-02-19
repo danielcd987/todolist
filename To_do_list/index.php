@@ -6,28 +6,16 @@ include "./includes/header.php";
 <h2 class = "heading">Login:</h2>
 
 <?php
-if(isset($_GET["error"])){
-    if($_GET["error"] == "emptyfields"){
-        echo"<h3 class = 'error'>ERROR: Fill in Every Field</h3>";
-    }
-    else if($_GET["error"] == "logininfailedsql"){
-        echo"<h3 class = 'error'>ERROR: Something Went Wrong Please Try Again.</h3>";
-    }
-    else if($_GET["error"] == "incorrectpassword"){
-        echo"<h3 class = 'error'>ERROR: Incorrect Password.</h3>";
-    }
-    else if($_GET["error"] == "noerrors"){
-        echo"<h3 class = 'error'>Success: Your Account Was Created Successfully</h3>";
-    }
+if(isset($_SESSION['id'])){
+    echo("<p>You are logged in</p>");
 }
-
-
-
-
+else{
+    echo("<p>You are logged out.</p>");
+}
 ?>
 
 
-<form method = "POST" action = "includes./login.inc.php">
+<form method = "POST" action = "includes./login.inc2.php">
     <div class = "centerbox">
         <input type = "text" placeholder="Username" class = "inputstyle" name = "username"><br>
     </div><br>
