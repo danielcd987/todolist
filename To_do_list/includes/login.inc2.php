@@ -2,10 +2,10 @@
     if(isset($_POST['login'])){
         require_once "tdDbc.php";
 
-        $userEmail = $_POST['username'];
+        $username = $_POST['username'];
         $paswd = $_POST['password'];
 
-        if(empty($userEmail) || empty($paswd)){
+        if(empty($username) || empty($paswd)){
             header("Location: ../index.php?error=emptyinputs");
             exit();
         }
@@ -19,17 +19,17 @@
             }
             else{
 
-                mysqli_stmt_bind_param($stmt, "s", $userEmail);
+                mysqli_stmt_bind_param($stmt, "s", $username);
                 mysqli_stmt_execute($stmt);
 
                 $result = mysqli_stmt_get_result($stmt);
                 if($row = mysqli_fetch_assoc($result)){
                     $paswdCheck = password_verify($paswd, $row['pwd']);
-                    if($paswdCheck === false){
+                    if($paswdCheck == false){
                     header("Location: ../index.php?error=wrongpwd");
                     exit();
                     }
-                    else if($paswdCheck === true){
+                    else if($paswdCheck == true){
                         session_start();
                         $_SESSION['id_user'] = $row['id'];
                         $_SESSION['username'] = $row['user_names'];
