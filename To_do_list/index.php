@@ -15,7 +15,7 @@ else{
 ?>
 
 
-<form method = "POST" action = "./includes/login.inc2.php">
+<form method = "POST" action = "includes./login.inc2.php">
     <div class = "centerbox">
         <input type = "text" placeholder="Username" class = "inputstyle" name = "username"><br>
     </div><br>
