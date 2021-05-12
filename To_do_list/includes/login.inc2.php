@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['login'])){
-        require_once "tdDbc.php";
+        require "tdDbc.php";
 
         $username = $_POST['username'];
         $paswd = $_POST['password'];
@@ -11,7 +11,7 @@
         }
         else{
             // $sql = "SELECT * FROM users WHERE user_names =? OR email = ?;";
-            $sql = "SELECT * FROM users WHERE user_names =?;";
+            $sql = "SELECT * FROM users WHERE user_names = ?;";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 header("Location: ../index.php?error=sqlerror");
@@ -34,7 +34,7 @@
                         $_SESSION['id_user'] = $row['id'];
                         $_SESSION['username'] = $row['user_names'];
 
-                        header("Location: ../index.php?login=success");
+                        header("Location: tasks_list.inc.php?login=success");
                         exit(); 
                     }
                     else{
