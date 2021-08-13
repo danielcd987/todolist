@@ -26,6 +26,7 @@
 
                 if($row = mysqli_fetch_assoc($result)) {
                     $paswdCheck = password_verify($password, $row['pwd']);
+
                     if($paswdCheck == false){
                     header("Location: ../index.php?error=wrongpwd");
                     exit();
