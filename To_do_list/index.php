@@ -6,7 +6,7 @@ include "./includes/header.php";
 <h2 class = "heading">Login:</h2>
 
 <?php
-if(isset($_SESSION['id'])){
+if(isset($_SESSION['id_user'])) {
     echo("<p>You are logged in</p>");
 }
 else{
@@ -21,7 +21,7 @@ else{
     </div><br>
 
     <div class = "centerbox">
-        <input class = "inputstyle" placeholder = "Password" name = "password" type = "password">
+        <input class = "inputstyle" placeholder = "Password" name = "password" type = "text">
     </div><br>
 
     <div class = "centerbox">

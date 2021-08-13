@@ -55,7 +55,7 @@ a:hover{
 }
 .centerbox{
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     color: whitesmoke;
 
 }

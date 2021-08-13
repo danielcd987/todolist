@@ -9,31 +9,31 @@
 <?php
 if(isset($_GET["error"])){
     if($_GET["error"] == "emptyfields"){
-        echo"<h3 class = 'error'>ERROR: Fill in Every Field</h3>";
+        echo"<h3 class = 'error'>ERROR: Fill in Every Field</h3>"; //empty fields
     }
     else if($_GET["error"] == "username"){
-        echo"<h3 class = 'error'>ERROR: Include No Spaces in User Name.</h3>";
+        echo"<h3 class = 'error'>ERROR: Include No Spaces in User Name.</h3>"; //space in the user name
     }
     else if($_GET["error"] == "email.uname"){
-        echo"<h3 class = 'error'>ERROR: Enter valid Email and User Name.</h3>";
+        echo"<h3 class = 'error'>ERROR: Enter valid Email and User Name.</h3>"; //invalid email or username
     }
     else if($_GET["error"] == "email"){
-        echo"<h3 class = 'error'>ERROR: Enter Valid Email</h3>";
+        echo"<h3 class = 'error'>ERROR: Enter Valid Email</h3>"; // invalid email
     }
     else if($_GET["error"] == "username_taken"){
-        echo"<h3 class = 'error'>ERROR: User Name Taken</h3>";
+        echo"<h3 class = 'error'>ERROR: User Name Taken</h3>"; //username already exists
     }
     else if($_GET["error"] == "invaliduserid"){
         echo"<h3 class = 'error'>ERROR: Enter Valid User Name</h3>";
     }
     else if($_GET["error"] == "password_nomatch"){
-        echo"<h3 class = 'error'>ERROR: Passwords Dont Match</h3>";
+        echo"<h3 class = 'error'>ERROR: Passwords Dont Match</h3>"; //passwords dont match 
     }
     else if($_GET["error"] == "sqlerrors"){
-        echo"<h3 class = 'error'>ERROR: An Error Has Occurred Please Try Again.</h3>";
+        echo"<h3 class = 'error'>ERROR: An Error Has Occurred Please Try Again.</h3>"; //db error
     }
     else if($_GET["error"] == "noerrors"){
-        echo"<h3 class = 'error'>Success: Your Account Was Created Successfully</h3>";
+        echo"<h3 class = 'error'>Success: Your Account Was Created Successfully</h3>"; //everything submitted successfully
     }
 }
 

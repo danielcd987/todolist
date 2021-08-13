@@ -10,7 +10,7 @@ if(!$results){
     echo'Error in deleting file!';
 }
 else{
-    header("Location: ../tasks_list.php?data=deleted");
+    header("Location: ./tasks_list.php?data=deleted");
 }
 
 }

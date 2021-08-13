@@ -1,5 +1,4 @@
 <?php
-    // include "includes/tdDbc.php";
     session_start();
 
 ?>
@@ -20,6 +19,7 @@
     <ul>
         <li><a href = "index.php">Login</a></li>
         <li><a href = "sign-up.php">Sign Up</a></li>
+        <li><a href = "tasks_list.php">tasks</a></li>
     </ul>
 </nav>
  
