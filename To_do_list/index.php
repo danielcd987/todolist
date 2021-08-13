@@ -21,7 +21,7 @@ else{
     </div><br>
 
     <div class = "centerbox">
-        <input class = "inputstyle" placeholder = "Password" name = "password" type = "text">
+        <input class = "inputstyle" placeholder = "Password" name = "password" type = "password">
     </div><br>
 
     <div class = "centerbox">

@@ -3,9 +3,9 @@
         require_once "tdDbc.php";
 
         $username = $_POST['username'];
-        $paswd = $_POST['password'];
+        $password = $_POST['password'];
 
-        if(empty($username) || empty($paswd)){
+        if(empty($username) || empty($password)){
             header("Location: ../index.php?error=emptyinputs");
             exit();
         }
@@ -25,7 +25,7 @@
                 $result = mysqli_stmt_get_result($stmt);
 
                 if($row = mysqli_fetch_assoc($result)) {
-                    $paswdCheck = password_verify($paswd, $row['pwd']);
+                    $paswdCheck = password_verify($password, $row['pwd']);
                     if($paswdCheck == false){
                     header("Location: ../index.php?error=wrongpwd");
                     exit();
