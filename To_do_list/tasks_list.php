@@ -3,7 +3,7 @@
     include "./includes/tdDbc.php";
 ?>
 <?php
-    if(isset($_SESSION['user_names'])){
+    if(isset($_SESSION['username'])){
         echo ('<p>You are logged in.</p>');
     }
     else{
@@ -42,7 +42,8 @@
 <br>
 <?php
 //shows the tasks in a table below the form
-$sql = "SELECT * FROM tasks;"; //gets results from database
+$id_user_num = $_SESSION['id_user'];
+$sql = "SELECT * FROM tasks WHERE $id_user_num = id;"; //gets results from database
         $results = mysqli_query($conn, $sql); //connects and displays 
         $queryresults = mysqli_num_rows($results); //checks rows and results
             if( $queryresults > 0){

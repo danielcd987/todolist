@@ -8,7 +8,7 @@
     $date = $_POST['duedate'];
     $descrip = $_POST['descript'];
 
-    $sql = "INSERT INTO `tasks`(`task`, `class`, `due_date`, `descrip`) VALUES ('$task','$class','$date','$descrip')";
+    $sql = "INSERT INTO `tasks`(`task`, `class`, `due_date`, `descrip`, 'id') VALUES ('$task','$class','$date','$descrip')";
     mysqli_multi_query($conn, $sql);
 
     header("Location: ../tasks_list.php?task=submitted");
