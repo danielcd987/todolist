@@ -1,18 +1,20 @@
 <?php
-    include "./includes/header.php";
-    include "./includes/tdDbc.php";
+include "./includes/header.php";
+include "./includes/tdDbc.php";
+if(isset($_SESSION['username'])){
+        echo ('<p>You are logged in.</p>');
+}
+else{
+        echo ('<p>You are logged out</p>');
+        header('Location: index.php');
+}
+
 ?>
 <?php
-    if(isset($_SESSION['username'])){
-        echo ('<p>You are logged in.</p>');
-    }
-    else{
-        echo ('<p>You are logged out</p>');
-    }
-
-?>
-
-<form name = "tasklist" action = "includes/tasks_list.inc.php" method = "POST">
+if(isset($_SESSION['id_user'])){
+    
+echo(
+'<form name = "tasklist" action = "includes/tasks_list.inc.php" method = "POST">
 
     <h3 class = "heading">Enter Task:</h3> 
     <div class = "centerbox"> 
@@ -40,10 +42,11 @@
 </form>
 
 <br>
-<?php
+');
+
 //shows the tasks in a table below the form
 $id_user_num = $_SESSION['id_user'];
-$sql = "SELECT * FROM tasks WHERE $id_user_num = id;"; //gets results from database
+$sql = "SELECT * FROM tasks WHERE $id_user_num = id ;"; //gets results from database
         $results = mysqli_query($conn, $sql); //connects and displays 
         $queryresults = mysqli_num_rows($results); //checks rows and results
             if( $queryresults > 0){
@@ -52,7 +55,7 @@ $sql = "SELECT * FROM tasks WHERE $id_user_num = id;"; //gets results from datab
                         "<div class = 'table'>
                         <table>
                             <tr>
-                                <th>ID:</th>
+                                <th>Task #:</th>
                                 <th>Task:</th>
                                 <th>Class:</th>
                                 <th>Due Date:</th>
@@ -60,20 +63,21 @@ $sql = "SELECT * FROM tasks WHERE $id_user_num = id;"; //gets results from datab
                                 <th>DELETE</th>
                             </tr>
                             <tr>
-                                <td><h3 class = 'records'>".$row['id']."</h3></td>
+                                <td><h3 class = 'records'>".$row['task_num']."</h3></td>
                                 <td><h3 class = 'records'>".$row['task']."</h3></td>
                                 <td><h3 class = 'records'>".$row['class']."</h3></td>
                                 <td><h3 class = 'records'>".$row['due_date']."</h5></td>
                                 <td><h3 class = 'records'>".$row['descrip']."</h5></td>
 
                                 <form method = 'POST' action = 'includes/delete.php'>
-                                <td>Delete Activity: <input type = 'submit' value = ".$row['id']." name = 'delete' class = 'buttonstyles'></td>
+                                <td>Delete Activity: <input type = 'submit' value = ".$row['task_num']." name = 'delete' class = 'buttonstyles'></td>
                                 </form>
                             </tr>
                         </table>
                         </div>";
                 }
             }
+        }            
 ?>
 <br>
 <?php

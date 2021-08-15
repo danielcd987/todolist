@@ -20,6 +20,14 @@
         <li><a href = "index.php">Login</a></li>
         <li><a href = "sign-up.php">Sign Up</a></li>
         <li><a href = "tasks_list.php">tasks</a></li>
+        <?php
+        if(isset($_SESSION['id_user'])){
+            echo("<li><a href='logout.php'>Logout</a></li>"); //creates a logout link if the login session is true
+        }
+        else{
+
+        }
+        ?>
     </ul>
 </nav>
  

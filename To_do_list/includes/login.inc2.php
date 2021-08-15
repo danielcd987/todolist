@@ -36,7 +36,7 @@
                         $_SESSION['id_user'] = $row['id'];
                         $_SESSION['username'] = $row['user_names'];
 
-                        header("Location: ../index.php?login=success");
+                        header("Location: ../tasks_list.php?login=success");
                         exit(); 
                     }
                     else{

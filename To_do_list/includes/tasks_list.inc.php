@@ -1,5 +1,6 @@
 <?php
 //submits the tasks into the task DB
+session_start();
     include 'tdDbc.php';
 
 
@@ -8,7 +9,7 @@
     $date = $_POST['duedate'];
     $descrip = $_POST['descript'];
 
-    $sql = "INSERT INTO `tasks`(`task`, `class`, `due_date`, `descrip`, 'id') VALUES ('$task','$class','$date','$descrip')";
+    $sql = "INSERT INTO `tasks`(`task`, `class`, `due_date`, `descrip`, 'id') VALUES ('$task','$class','$date','$descrip','{$_SESSION['id_user']}')";
     mysqli_multi_query($conn, $sql);
 
     header("Location: ../tasks_list.php?task=submitted");
