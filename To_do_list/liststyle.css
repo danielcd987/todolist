@@ -32,6 +32,7 @@ ul {
 a{
     font-family: 'Oxanium';
     color: #009900;
+    padding: 8px;
 }
 a:hover{
     color:white;
@@ -96,6 +97,7 @@ table {
 p{
     font-family: 'Oxanium';
     color: #009900;
+    text-align: right;
 }
 .error{
     font-family: 'Oxanium';

@@ -17,15 +17,24 @@
 
 <nav>
     <ul>
-        <li><a href = "index.php">Login</a></li>
-        <li><a href = "sign-up.php">Sign Up</a></li>
-        <li><a href = "tasks_list.php">tasks</a></li>
+        <!-- <li><a href = "index.php">Login</a></li>
+        <li><a href = "sign-up.php">Sign Up</a></li> -->
+        
         <?php
-        if(isset($_SESSION['id_user'])){
-            echo("<li><a href='logout.php'>Logout</a></li>"); //creates a logout link if the login session is true
+        if(isset($_SESSION['id_user'])){ //creates a logout link if the login session is true
+            echo("<ul>
+                <li><a href='logout.php'>Logout</a></li> 
+                <li><a href = 'tasks_list.php'>Tasks</a></li>
+                <li><p>You are logged in</p></li>
+                </ul>"); //creates the link to view tasks when loggedin 
         }
         else{
-
+            echo("<ul>
+                 <li><a href = 'index.php'>Login</a></li>
+                 <li><a href = 'sign-up.php'>Sign Up</a></li>
+                 <li><p>You are logged out</p></li>
+                </ul>");
+                
         }
         ?>
     </ul>

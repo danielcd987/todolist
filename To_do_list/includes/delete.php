@@ -3,14 +3,14 @@ if(isset($_POST['delete'])){
 include 'tdDbc.php';
 
 $id = $_POST['delete'];
-$sql = "DELETE FROM `tasks` WHERE `id` = $id ";
+$sql = "DELETE FROM `tasks` WHERE `task_num` = $id ";
 $results = mysqli_query($conn,$sql);
 
 if(!$results){
     echo'Error in deleting file!';
 }
 else{
-    header("Location: ./tasks_list.php?data=deleted");
+    header("Location: ../tasks_list.php?data=deleted");
 }
 
 }

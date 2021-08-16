@@ -1,13 +1,14 @@
 <?php
 include "./includes/header.php";
 include "./includes/tdDbc.php";
-if(isset($_SESSION['username'])){
-        echo ('<p>You are logged in.</p>');
-}
-else{
-        echo ('<p>You are logged out</p>');
-        header('Location: index.php');
-}
+
+// if(isset($_SESSION['username'])){
+//         echo ('<p>You are logged in.</p>');
+// }
+// else{
+//         echo ('<p>You are logged out</p>');
+//         header('Location: index.php');
+// }
 
 ?>
 <?php
@@ -46,7 +47,8 @@ echo(
 
 //shows the tasks in a table below the form
 $id_user_num = $_SESSION['id_user'];
-$sql = "SELECT * FROM tasks WHERE $id_user_num = id ;"; //gets results from database
+// echo($id_user_num);
+$sql = "SELECT * FROM tasks WHERE '$id_user_num' LIKE id ;"; //gets results from database
         $results = mysqli_query($conn, $sql); //connects and displays 
         $queryresults = mysqli_num_rows($results); //checks rows and results
             if( $queryresults > 0){
@@ -77,7 +79,10 @@ $sql = "SELECT * FROM tasks WHERE $id_user_num = id ;"; //gets results from data
                         </div>";
                 }
             }
-        }            
+        }
+    else{
+        header("Location: index.php");
+    }            
 ?>
 <br>
 <?php
