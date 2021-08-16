@@ -72,7 +72,7 @@ $sql = "SELECT * FROM tasks WHERE '$id_user_num' LIKE id ;"; //gets results from
                                 <td><h3 class = 'records'>".$row['descrip']."</h5></td>
 
                                 <form method = 'POST' action = 'includes/delete.php'>
-                                <td>Delete Activity: <input type = 'submit' value = ".$row['task_num']." name = 'delete' class = 'buttonstyles'></td>
+                                <td>Delete Activity: <input type = 'submit' value = ".$row['task_num']." name = 'delete' class = 'buttonstyles'> <small>Click to delete</small></td>
                                 </form>
                             </tr>
                         </table>
