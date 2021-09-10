@@ -39,7 +39,7 @@ if(isset($_GET["error"])){
 
 ?>
 
-<form name = "signup" action = "includes/signup.inc.php" method = "POST">
+<form name = "signup" action = "./includes/signup.inc.php" method = "POST">
     
     <h3 class = "heading">First Name:</h3> 
 
