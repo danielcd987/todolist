@@ -1,10 +1,4 @@
 <?php
-//servernames and database names needed to connect
-// $servername = "us-cdbr-east-04.cleardb.com";
-// $dBUsername = "b66f47e4e41f6f";
-// $dBPassword = "8a30a3ed";
-// $dBName = "heroku_30e79bb25759c2d";
-
 //for xampp
 
 // $servername = "localhost";
