@@ -28,7 +28,7 @@ if(isset($_POST['signup'])){
         header("Location: ../sign-up.php?error=email");
         exit();
     }
-    else if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){ //looks through username for symbols 
+    else if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){ 
         header("Location: ../signup.php?error=invaliduserid=".$username);
         exit();
     }
