@@ -5,7 +5,7 @@ include "./includes/header.php";
 <h2 class = "heading">Login:</h2>
 
 
-<form method = "POST" action = "./includes./login.inc2.php">
+<form method = "POST" action = "./includes/login.inc2.php">
     <div class = "centerbox">
         <input type = "text" placeholder="Username" class = "inputstyle" name = "username"><br>
     </div><br>
